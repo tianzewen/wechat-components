@@ -4,10 +4,28 @@
   class='form'
 >
   <button
-    formType='submit'
+    size='{{size || "default"}}'
+    type='{{type}}'
+    plain='{{plain || false}}'
+    disabled='{{disabled || false}}'
+    loading='{{loading || false}}'
+    hover-stop-propagation='{{hoverStopPropagation || false}}'
+    hover-start-time='{{hoverStartTime || 20}}'
+    hover-stay-time='{{hoverStayTime || 70}}'
+    session-from='{{sessionFrom}}'
+    send-message-title='{{sendMessageTitle}}'
+    send-message-path='{{sendMessagePath}}'
+    send-message-img='{{sendMessageImg}}'
+    show-message-card='{{showMessageCard || false}}'
+    app-parameter='{{appParameter}}'
+    form-type='submit'
     open-type='{{openType}}'
     class='view-form-button'
     bindgetuserinfo='getUserInfo'
+    bindcontact='contact'
+    bindgetphonenumber='getPhonenumber'
+    binderror='error'
+    bindopensetting='openSetting'
   >
     <slot></slot>
   </button>
