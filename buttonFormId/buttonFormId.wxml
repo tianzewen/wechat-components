@@ -1,0 +1,14 @@
+<form
+  bindsubmit='setFormId'
+  report-submit='true'
+  class='form'
+>
+  <button
+    formType='submit'
+    open-type='{{openType}}'
+    class='view-form-button'
+    bindgetuserinfo='getUserInfo'
+  >
+    <slot></slot>
+  </button>
+</form>

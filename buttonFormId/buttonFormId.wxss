@@ -1,0 +1,30 @@
+
+
+.form {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  background-color: inherit;
+}
+
+.view-form-button {
+  height: auto;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  line-height: inherit;
+  overflow: visible;
+  background-color: inherit;
+}
