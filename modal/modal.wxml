@@ -1,0 +1,33 @@
+<view wx:if='{{show}}' class='page' catchtap='hide' style='z-index: {{zIndex}}'>
+  <view class='modal' catchtap='nothing'>
+    <text wx:if='{{title}}' class='title'>{{title}}</text>
+    <text wx:if='{{content}}' class='content' class='content'>{{content}}</text>
+    <!-- 取消和确认按钮 -->
+    <view wx:if='{{customList.length < 1}}' class='action-box'>
+      <button
+        wx:if='{{showCancel}}'
+        catchtap='onCancel'
+        class='cancel-btn'
+        style='color: {{cancelColor}}'
+      >{{cancelText}}</button>
+      <button
+        open-type='{{confirmOpenType}}'
+        catchtap='onConfirm'
+        class='confirm-btn border-left'
+        style='color: {{confirmColor}}'
+      >{{confirmText}}</button>
+    </view>
+    <!-- 自定义列表 -->
+    <view wx:else class='action-box' style='flex-direction: {{customDirection}}'>
+      <button
+        wx:for='{{customList}}'
+        wx:key='index'
+        data-custom='{{item}}'
+        open-type='{{item.openType}}'
+        catchtap='onCustomTap'
+        class='default-btn {{customDirection == "row" && index > 0 ? "border-left": ""}}'
+        style='color: {{item.color}};flex-shrink: {{customDirection == "column" ? 0 : 1}}'
+      >{{item.text}}</button>
+    </view>
+  </view>
+</view>
