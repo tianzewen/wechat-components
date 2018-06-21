@@ -26,4 +26,26 @@
 
 1. 引入组件到相关页面
 1. 设置title、content、showCancel、showCancel、cancelColor、confirmText、confirmColor，另外需要设置show属性为true/false来决定显示和隐藏
-1. 
+1. 如果是自定义列表，属性showCancel、showCancel、cancelColor、confirmText、confirmColor将无效
+1. 如果是自定义列表，可以设置属性customDirection来决定自定义列表是row/column，默认是：column
+1. 通过设置bind:confirm、bind:cancel、bind:customTap来对应点击确定按钮、取消按钮、自定义按钮的事件
+1. 自定义按钮事件会返回所点击的自定义项的内容（你可以在自定义项中写函数，这样就可以动态触发了）
+
+### 问题以及注意事项
+- 目前没有动画效果
+- 自定义列表超过一个屏幕的情况没有考虑
+- 极端情况没有考虑
+- 没有经过大量测试（中量的也没有）
+
+## dialog组件
+> 主要是提供一个弹出层的最底层支持，通过这个基础组件可以制作出专职组件，比如tipDialog，modal用这个当基础层也非常好，不过modal是先做的，这个是后做的，以后可能会重新服装一下modal
+
+### 使用场景和方式：
+- 因为支持slot，内容直接写在&lt;dialog&gt;&lt;/dialog&gt;中就可以了
+- show字段来控制显示和隐藏
+- 支持设置背景颜色，字段是bgColor
+- 支持设置z-index，字段是zIndex，注意，设置的z-index是最低层的层级，也就是，真正显示内容的view可能是zIndex + 2
+- dialog的子元素最好都是绝对定位的，如果你想要子元素是相对定位，可以多套一个view
+
+### 问题以及注意事项
+- 子元素最好只有一个 并且 最好还是绝对定位，便于你写出称心如意的样式
