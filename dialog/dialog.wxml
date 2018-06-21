@@ -1,0 +1,6 @@
+<view class='dialog {{show ? "show" : "hide"}}' style='z-index: {{zIndex}}' catchtap='tapMenuHide'>
+  <view class='dialog bg' style='background-color: {{bgColor}};z-index: {{zIndex + 1}}'></view>
+  <view class='dialog position' style='z-index: {{zIndex + 2}}'>
+    <slot></slot>
+  </view>
+</view>
